@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music corner</title>
+    <title>Drinks corner</title>
     <!-- bootstrap css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -23,14 +23,10 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg d">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img
-          style="width: 190px; height: 50px"
-          src="./Images/logo_new_12.png"
-          alt=""
-        />
+        <img src="./Images/logo.png" alt="" />
       </a>
       <button
         class="navbar-toggler text-white border border-white"
@@ -47,40 +43,42 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
-              style="color: #67a5d6"
-              class="nav-link active me-2 fw-bold"
+              style="color: #fe4902"
+              class="nav-link active me-2 fs-6"
               aria-current="page"
               href="#"
               >Home</a
             >
           </li>
           <li class="nav-item">
-            <a style="color: #67a5d6" class="nav-link me-2 fw-bold" href="#"
-              >Musics</a
+            <a style="color: #fe4902" class="nav-link me-2 fs-6" href="#drinks"
+              >Drinks</a
             >
           </li>
           <li class="nav-item">
-            <a style="color: #67a5d6" class="nav-link me-2 fw-bold">Sign up</a>
+            <a style="color: #fe4902" class="nav-link me-2 fs-6">Sign up</a>
           </li>
           <li class="nav-item">
-            <a style="color: #67a5d6" class="nav-link pe-5 fw-bold">Log in</a>
+            <a style="color: #fe4902" class="nav-link pe-5 fs-6">Log in</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <div class="d-flex" role="search">
           <input
+            id="searchField"
             class="form-control me-2"
             type="search"
-            placeholder="Search your artist"
+            placeholder="Search your Drink's"
             aria-label="Search"
           />
           <button
+            onclick="searchBtn()"
             class="btn btn-outline-primary"
-            style="color: #67a5d6"
+            style="color: #fe4902"
             type="submit"
           >
             Search
           </button>
-        </form>
+        </div>
       </div>
     </div>
   </nav>
@@ -89,14 +87,14 @@
       <img
         style="margin-left: 8rem"
         class="ms-md-0"
-        src="/Images/music-icon.png"
+        src="/Images/cocktail_left.png"
         alt=""
       />
-      <div class="text-center mx-4">
-        <h2 class="fw-bold border-bottom">
-          Welcome to <span style="color: #67a5d6">TheMusicDB</span>
+      <div class="text-center mt-5">
+        <h2 style="border-bottom: 1px solid #fe4902" class="fw-bold">
+          Welcome to <span style="color: #fe4902">TheCocktailDB</span>
         </h2>
-        <small>
+        <small style="font-weight: 100">
           Music is a form of art and expression that combines sound elements
           such as melody, harmony, rhythm, and timbre to create an aesthetic and
           emotional experience for the listener. It is a universal human
@@ -108,15 +106,23 @@
       <img
         style="margin-left: 8rem"
         class="ms-md-0"
-        src="/Images/music-icon.png"
+        src="/Images/cocktail_right.png"
         alt=""
       />
     </div>
+
+    <div id="drink-text" class="text-center mb-4 mt-5"></div>
+    <div
+      id="drinks-container"
+      class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mb-5"
+    ></div>
     <!-- bootstrap js -->
+    <script src="./JS/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
   </body>
+  <footer></footer>
 </html>
