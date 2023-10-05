@@ -3,6 +3,9 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   background-color: black;
 }
+html {
+  scroll-behavior: smooth;
+}
 nav {
   background: rgb(177, 61, 29);
   background: linear-gradient(
@@ -25,7 +28,7 @@ nav {
   transition-timing-function: ease-in-out;
 }
 .drinks-button:hover {
-  width: 320px;
+  width: 225px;
   margin-left: 10px;
 }
 .button-title {

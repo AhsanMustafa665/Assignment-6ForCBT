@@ -34,15 +34,15 @@ const displayDrinks = (drinks) => {
     div.innerHTML = `
     <div class="col">
     <div class="card h-100" style="border:1px solid #fe4902;">
-      <img src="${strDrinkThumb}" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 style="color: #fe4902"  class="card-title fw-bold">${strDrink}</h5>
+      <img src="${strDrinkThumb}" class="card-img-top p-2" alt="..." />
+      <div class="card-body b">
+        <h5 style="color: #fe4902" class="card-title fw-bold">${strDrink}</h5>
         <h6>Category: ${strCategory}</h6>
         <p title="${strInstructions}"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top" class="card-text">
          ${strInstructions.slice(0, 45) + "..."}
         </p>
       </div>
-     <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="detailsBtn('${idDrink}')" class="drinks-button ">
+     <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="detailsBtn('${idDrink}')" class="drinks-button">
      <div class="d-flex justify-content-around align-items-center">
      <i style="color:#fe4902" class="fa-solid fa-martini-glass fs-5"></i>
      <p style="color:#fe4902" class="button-title pt-3">Drinks</p>
@@ -63,24 +63,28 @@ const detailsBtn = (id) => {
     .then((data) => detailsDrink(data.drinks));
 };
 const detailsDrink = (drink) => {
-  const ddddd = document.getElementById("staticBackdrop");
+  const drinksDetailsContainer = document.getElementById(
+    "drinksDetailsContainer"
+  );
   const singleDrink = drink[0];
-  const newDiv = document.createElement("div");
-  newDiv.innerHTML = `
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-</div>`;
-  ddddd.appendChild(newDiv);
+  const {
+    strDrink,
+    strDrinkThumb,
+    strInstructions,
+    strIngredient1,
+    strIngredient2,
+  } = singleDrink;
+  Swal.fire({
+    title: ` ${strDrink}`,
+    text: `${strInstructions}`,
+    imageUrl: `${strDrinkThumb}`,
+    imageWidth: 400,
+    imageHeight: 400,
+    imageAlt: "Custom image",
+    showDenyButton: true,
+    confirmButtonText: `${strIngredient1}`,
+    denyButtonText: `${strIngredient2}`,
+    confirmButtonColor: " #fe4902",
+    denyButtonColor: "#fe4902",
+  });
 };
