@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drinks corner</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" />
     <!-- bootstrap css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -70,12 +71,14 @@
             placeholder="Search your Drink's"
             aria-label="Search"
           />
+
           <button
             onclick="searchBtn()"
-            class="btn btn-outline-primary"
-            style="color: #fe4902"
+            class="btn btn-outline-danger w-50"
+            style="color: white"
             type="submit"
           >
+            <i class="fa-solid fa-magnifying-glass"></i>
             Search
           </button>
         </div>
@@ -86,7 +89,7 @@
     <div class="text-white container d-md-flex mt-5 pt-5">
       <img
         style="margin-left: 8rem"
-        class="ms-md-0"
+        class="ms-md-0 d-none d-md-block"
         src="/Images/cocktail_left.png"
         alt=""
       />
@@ -95,17 +98,21 @@
           Welcome to <span style="color: #fe4902">TheCocktailDB</span>
         </h2>
         <small style="font-weight: 100">
-          Music is a form of art and expression that combines sound elements
-          such as melody, harmony, rhythm, and timbre to create an aesthetic and
-          emotional experience for the listener. It is a universal human
-          phenomenon found in virtually every culture throughout history. Music
-          can take many forms and be created using various instruments, voices,
-          or electronic means.
+          In a world where health-conscious consumers are constantly seeking
+          delicious and nutritious options,
+          <a
+            href="https://www.thecocktaildb.com/"
+            style="color: #fe4902; text-decoration: none"
+            >The CocktailDB</a
+          >
+          , stands as a shining beacon of refreshment. With a passion for
+          producing the finest, most flavorful juices, we have become a
+          household name in the world of beverages.
         </small>
       </div>
       <img
         style="margin-left: 8rem"
-        class="ms-md-0"
+        class="ms-md-0 d-none d-md-block"
         src="/Images/cocktail_right.png"
         alt=""
       />
@@ -116,6 +123,15 @@
       id="drinks-container"
       class="row row-cols-1 row-cols-md-3 g-4 container mx-auto mb-5"
     ></div>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    ></div>
     <!-- bootstrap js -->
     <script src="./JS/script.js"></script>
     <script
@@ -123,6 +139,69 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <!-- sweetalert cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
-  <footer></footer>
+  <footer>
+    <div class="footer-dark">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Online purchase</a></li>
+                <li><a href="#">Credit card</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <h3>About</h3>
+              <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="#">Juice quality</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 item text">
+              <img class="mb-2" src="./Images/logo.png" alt="" />
+              <p>
+                At
+                <a
+                  href="https://www.thecocktaildb.com/"
+                  style="color: #fe4902; text-decoration: none"
+                  >The CocktailDB</a
+                >, we are more than just a juice company; we are a source of
+                pure, natural goodness that you can savor with every sip. Join
+                us in embracing a healthier and tastier way of life. Experience
+                the freshness, flavor, and vitality that only
+                <a
+                  href="https://www.thecocktaildb.com/"
+                  style="color: #fe4902; text-decoration: none"
+                  >The CocktailDB</a
+                >
+                can deliver. Refresh your day with
+                <a
+                  href="https://www.thecocktaildb.com/"
+                  style="color: #fe4902; text-decoration: none"
+                  >The CocktailDB</a
+                >
+                juices – where taste meets nutrition!
+              </p>
+            </div>
+            <div class="col item social">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a
+              ><a href="#"><i class="fa-brands fa-twitter"></i></a
+              ><a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+          <p class="copyright text-white mt-5">
+            All right reserved by |
+            <span style="color: #fe4902">MOSTAFA</span> © 2023
+          </p>
+        </div>
+      </footer>
+    </div>
+  </footer>
 </html>
