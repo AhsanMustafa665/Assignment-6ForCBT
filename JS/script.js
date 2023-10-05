@@ -16,7 +16,9 @@ const searchBtn = () => {
       .then((data) => displayDrinks(data.drinks));
   }
   searchField.value = "";
+  loading.innerText = "";
 };
+
 const displayDrinks = (drinks) => {
   const drinkText = document.getElementById("drink-text");
   const div = document.createElement("div");
@@ -24,9 +26,13 @@ const displayDrinks = (drinks) => {
         <h4 style="border-bottom:1px solid #fe4902" class="text-white text-center d-inline">
           🍸Our <span style="color: #fe4902">Drinks</span>🍸
         </h4>`;
+
   drinkText.appendChild(div);
+
   const drinksContainer = document.getElementById("drinks-container");
+
   drinksContainer.textContent = "";
+
   drinks.map((artist) => {
     const { idDrink, strDrink, strDrinkThumb, strInstructions, strCategory } =
       artist;
@@ -63,9 +69,6 @@ const detailsBtn = (id) => {
     .then((data) => detailsDrink(data.drinks));
 };
 const detailsDrink = (drink) => {
-  const drinksDetailsContainer = document.getElementById(
-    "drinksDetailsContainer"
-  );
   const singleDrink = drink[0];
   const {
     strDrink,
